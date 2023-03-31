@@ -3,21 +3,22 @@ import {
   getAuth,
   GoogleAuthProvider,
   signInWithPopup,
-  signInWithRedirect,
+  createUserWithEmailAndPassword,
 } from "firebase/auth";
 
 import { getFirestore, doc, getDoc, setDoc } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCXjZKjdaHPNcxgfkejXxYGJJyIgE4wEu4",
-  authDomain: "crwn-clothing-db-9dec0.firebaseapp.com",
-  projectId: "crwn-clothing-db-9dec0",
-  storageBucket: "crwn-clothing-db-9dec0.appspot.com",
-  messagingSenderId: "715010623060",
-  appId: "1:715010623060:web:77031c4b207250c0f78fc1",
+  apiKey: "AIzaSyCnGL3RkoCyPGfad995cvhY7l1TpeXZfng",
+  authDomain: "crwn-clothing-db-44d08.firebaseapp.com",
+  projectId: "crwn-clothing-db-44d08",
+  storageBucket: "crwn-clothing-db-44d08.appspot.com",
+  messagingSenderId: "824002122529",
+  appId: "1:824002122529:web:62bc198e6c57abc2076460",
 };
 
-const firebaseApp = initializeApp(firebaseConfig);
+initializeApp(firebaseConfig);
+// const app = initializeApp(firebaseConfig);
 
 const provider = new GoogleAuthProvider();
 provider.setCustomParameters({
@@ -28,7 +29,7 @@ export const auth = getAuth();
 export const signInWithGooglePopup = () => signInWithPopup(auth, provider);
 export const db = getFirestore();
 
-export const createUserDocumentFromAuth = async (userAuth) => {
+export const createUserDocumentFromAuth = async (userAuth, additionalInfo) => {
   const userDocRef = doc(db, "users", userAuth.uid);
   const userSnapshot = await getDoc(userDocRef);
 
@@ -41,6 +42,7 @@ export const createUserDocumentFromAuth = async (userAuth) => {
         createdAt,
         displayName,
         email,
+        ...additionalInfo,
       });
     } catch (error) {
       console.log("error creating the user", error);
@@ -48,4 +50,10 @@ export const createUserDocumentFromAuth = async (userAuth) => {
   }
 
   return userDocRef;
+};
+
+export const createAuthUserWithEmailAndPassword = async (email, password) => {
+  if (!email || !password) return;
+
+  return await createUserWithEmailAndPassword(auth, email, password);
 };
