@@ -1,8 +1,9 @@
-import React, { useState } from "react";
 import {
   createAuthUserWithEmailAndPassword,
   createUserDocumentFromAuth,
 } from "../../utils/firebase/firebase.utils";
+import React, { useState } from "react";
+
 import Button from "../button/button.component";
 import FormInput from "../form-input/form-input.component";
 import "./sign-up-form.style.scss";
@@ -42,10 +43,16 @@ const SignUpFrom = () => {
         conformPassword: "",
       });
     } catch (err) {
-      if (err.code === "auth/email-already-in-use")
-        alert("Cannot create account, email already in use");
-      else if (err.code === "auth/weak-password") alert("Password is too week");
-      else console.error("user creation error", err);
+      switch (err.code) {
+        case "auth/email-already-in-use":
+          alert("Cannot create account, email already in use");
+          break;
+        case "auth/weak-password":
+          alert("Password is too week");
+          break;
+        default:
+          console.error("user creation error", err);
+      }
     }
   };
 

@@ -1,35 +1,35 @@
 import React, { useState } from "react";
-import {
-  signInWithGooglePopup,
-  createUserDocumentFromAuth,
-  signAuthUserWithEmailAndPassword,
-} from "../../utils/firebase/firebase.utils";
 import Button from "../button/button.component";
 import FormInput from "../form-input/form-input.component";
 import "./sign-in-form.style.scss";
+import {
+  signInWithGooglePopup,
+  signAuthUserWithEmailAndPassword,
+} from "../../utils/firebase/firebase.utils";
 
 const SignInForm = () => {
   const [formField, setFormField] = useState({
     email: "",
     password: "",
   });
+
   const { email, password } = formField;
 
   const handelChange = (e) => {
     const { name, value } = e.target;
     setFormField((prevField) => ({ ...prevField, [name]: value }));
   };
+
   const signInWithGoogle = async () => {
-    const { user } = await signInWithGooglePopup();
-    await createUserDocumentFromAuth(user);
+    await signInWithGooglePopup();
   };
 
   const handelSubmit = async (e) => {
     e.preventDefault();
 
     try {
-      const res = await signAuthUserWithEmailAndPassword(email, password);
-      console.log(res.user.uid);
+      await signAuthUserWithEmailAndPassword(email, password);
+
       setFormField({
         email: "",
         password: "",
