@@ -1,17 +1,17 @@
 import React from "react";
-import DirectoryData from "../../directory-data.json";
-import "./directory.style.scss";
+import DirectoryData from "./directory-data.json";
 import DirectoryItem from "../directory-item/directory-item.component";
+import { DirectoryCon } from "./directory.style";
 
 const Directory = () => (
-  <div className="directory-container">
+  <DirectoryCon>
     {DirectoryData.map((directory) => (
       <DirectoryItem
         key={directory.id}
         directory={directory}
       />
     ))}
-  </div>
+  </DirectoryCon>
 );
 
 export default Directory;

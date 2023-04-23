@@ -1,11 +1,12 @@
 import React, { useState } from "react";
-import Button from "../button/button.component";
+import Button, { BUTTON_TYPE_CLASSES } from "../button/button.component";
 import FormInput from "../form-input/form-input.component";
-import "./sign-in-form.style.scss";
+import "./sign-in-form.style.jsx";
 import {
   signInWithGooglePopup,
   signAuthUserWithEmailAndPassword,
 } from "../../utils/firebase/firebase.utils";
+import { ButtonsCon, SignInCon } from "./sign-in-form.style.jsx";
 
 const SignInForm = () => {
   const [formField, setFormField] = useState({
@@ -49,7 +50,7 @@ const SignInForm = () => {
   };
 
   return (
-    <div className="sign-in-container">
+    <SignInCon>
       <h2>I already have an account</h2>
       <span>Sign in with email and password</span>
 
@@ -69,18 +70,18 @@ const SignInForm = () => {
           name="password"
           value={password}
         />
-        <div className="buttons-container">
+        <ButtonsCon>
           <Button type="submit">Sign IN</Button>
           <Button
             type="button"
-            buttonType="google-sign-in"
+            buttonType={BUTTON_TYPE_CLASSES.google}
             onClick={signInWithGoogle}
           >
             GOOGLE SIGN IN
           </Button>
-        </div>
+        </ButtonsCon>
       </form>
-    </div>
+    </SignInCon>
   );
 };
 

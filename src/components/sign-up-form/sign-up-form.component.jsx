@@ -6,7 +6,7 @@ import React, { useState } from "react";
 
 import Button from "../button/button.component";
 import FormInput from "../form-input/form-input.component";
-import "./sign-up-form.style.scss";
+import { SignUpCon } from "./sign-up-form.style";
 
 const SignUpFrom = () => {
   const [formField, setFormField] = useState({
@@ -57,7 +57,7 @@ const SignUpFrom = () => {
   };
 
   return (
-    <div className="sign-up-container">
+    <SignUpCon>
       <h2>Don't have an account ?</h2>
       <span>Sign up with email and password</span>
       <form onSubmit={handelSubmit}>
@@ -94,7 +94,7 @@ const SignUpFrom = () => {
         />
         <Button type="submit">Sign Up</Button>
       </form>
-    </div>
+    </SignUpCon>
   );
 };
 
