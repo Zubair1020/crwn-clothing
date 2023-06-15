@@ -1,9 +1,8 @@
 import styled from "styled-components";
 
-export const BaseButton = styled.div`
+export const BaseButton = styled.button`
   font-family: "Montserrat", sans-serif !important;
   min-width: 165px;
-  width: auto;
   height: 50px;
   letter-spacing: 0.5px;
   line-height: 50px;
@@ -17,7 +16,6 @@ export const BaseButton = styled.div`
   cursor: pointer;
   display: flex;
   justify-content: center;
-
   &:hover {
     background-color: white;
     color: black;

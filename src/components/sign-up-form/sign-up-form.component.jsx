@@ -1,12 +1,12 @@
+import { useState } from "react";
 import {
   createAuthUserWithEmailAndPassword,
   createUserDocumentFromAuth,
 } from "../../utils/firebase/firebase.utils";
-import React, { useState } from "react";
 
 import Button from "../button/button.component";
 import FormInput from "../form-input/form-input.component";
-import { SignUpCon } from "./sign-up-form.style";
+import { SignUpCon, StyledButton } from "./sign-up-form.style";
 
 const SignUpFrom = () => {
   const [formField, setFormField] = useState({
@@ -57,44 +57,46 @@ const SignUpFrom = () => {
   };
 
   return (
-    <SignUpCon>
-      <h2>Don't have an account ?</h2>
-      <span>Sign up with email and password</span>
-      <form onSubmit={handelSubmit}>
-        <FormInput
-          onChange={handelChange}
-          label="Display Name"
-          type="text"
-          name="displayName"
-          value={displayName}
-        />
+    <>
+      <SignUpCon>
+        <h2>Don't have an account ?</h2>
+        <span>Sign up with email and password</span>
+        <form onSubmit={handelSubmit}>
+          <FormInput
+            onChange={handelChange}
+            label="Display Name"
+            type="text"
+            name="displayName"
+            value={displayName}
+          />
 
-        <FormInput
-          onChange={handelChange}
-          label="Email"
-          type="text"
-          name="email"
-          value={email}
-        />
+          <FormInput
+            onChange={handelChange}
+            label="Email"
+            type="text"
+            name="email"
+            value={email}
+          />
 
-        <FormInput
-          onChange={handelChange}
-          label="Password"
-          type="password"
-          name="password"
-          value={password}
-        />
+          <FormInput
+            onChange={handelChange}
+            label="Password"
+            type="password"
+            name="password"
+            value={password}
+          />
 
-        <FormInput
-          onChange={handelChange}
-          label="Conform Password"
-          type="password"
-          name="conformPassword"
-          value={conformPassword}
-        />
-        <Button type="submit">Sign Up</Button>
-      </form>
-    </SignUpCon>
+          <FormInput
+            onChange={handelChange}
+            label="Conform Password"
+            type="password"
+            name="conformPassword"
+            value={conformPassword}
+          />
+          <StyledButton type="submit">Sign Up</StyledButton>
+        </form>
+      </SignUpCon>
+    </>
   );
 };
 

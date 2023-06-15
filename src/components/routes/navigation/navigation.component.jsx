@@ -1,5 +1,5 @@
 import { Link, Outlet } from "react-router-dom";
-import { ReactComponent as CrwnLogo } from "../../../assets/crown.svg";
+import CrwnLogo from "../../../assets/crown.svg";
 import { useContext } from "react";
 import { UserContext } from "../../../context/user.context";
 import { signOutUser } from "../../../utils/firebase/firebase.utils";
@@ -22,7 +22,7 @@ const Navigation = () => {
       <NavigationContainer>
         <LogoContainer>
           <Link to="/">
-            <CrwnLogo />
+            <img src={CrwnLogo} />
           </Link>
         </LogoContainer>
         <NavLinksContainer>
