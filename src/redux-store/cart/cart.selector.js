@@ -6,6 +6,10 @@ export const selectIsCartOpen = createSelector(
   [selectCart],
   (cart) => cart.isCartOpen
 );
+<<<<<<< HEAD
+=======
+
+>>>>>>> dc9b14
 export const selectCartItems = createSelector(
   [selectCart],
   (cart) => cart.cartItems

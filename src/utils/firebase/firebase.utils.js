@@ -39,6 +39,7 @@ export const auth = getAuth();
 export const signInWithGooglePopup = () => signInWithPopup(auth, provider);
 export const db = getFirestore();
 
+<<<<<<< HEAD
 // export const addCollectionAndDocument = async () => {
 //   const collectionRef = collection(db, "collection");
 //   const q = query(collectionRef);
@@ -53,12 +54,22 @@ export const db = getFirestore();
 //   return categoryMap;
 // };
 
+=======
+>>>>>>> dc9b14
 export const getCategoriesAndDocuments = async () => {
   const collectionRef = collection(db, "collection");
   const q = query(collectionRef);
   const querySnapshot = await getDocs(q);
 
+<<<<<<< HEAD
   return querySnapshot.docs.map((docSnapshot) => docSnapshot.data());
+=======
+  const categoryMap = querySnapshot.docs.map((docSnapShot) =>
+    docSnapShot.data()
+  );
+
+  return categoryMap;
+>>>>>>> dc9b14
 };
 
 export const createUserDocumentFromAuth = async (userAuth, additionalInfo) => {

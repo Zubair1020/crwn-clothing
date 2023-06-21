@@ -4,7 +4,6 @@ import {
   createUserDocumentFromAuth,
 } from "../../utils/firebase/firebase.utils";
 
-import Button from "../button/button.component";
 import FormInput from "../form-input/form-input.component";
 import { SignUpCon, StyledButton } from "./sign-up-form.style";
 

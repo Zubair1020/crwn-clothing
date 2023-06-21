@@ -15,10 +15,16 @@ import {
 } from "./cart-dropdown.styles";
 
 const CartDropdown = () => {
+<<<<<<< HEAD
   const dispatch = useDispatch();
   const isCartOpen = useSelector(selectIsCartOpen);
   const cartItems = useSelector(selectCartItems);
+=======
+>>>>>>> dc9b14
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const cartItems = useSelector(selectCartItems);
+  const isCartOpen = useSelector(selectIsCartOpen);
 
   const handelCheckOutClick = () => {
     dispatch(setIsCartOpen(!isCartOpen));
