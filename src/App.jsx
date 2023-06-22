@@ -1,19 +1,11 @@
 import { useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
-<<<<<<< HEAD
-=======
 import { useDispatch } from "react-redux";
 import { setCurrentUser } from "./redux-store/user/user.action";
->>>>>>> dc9b14
 import {
   createUserDocumentFromAuth,
   onAuthStateChangedListener,
 } from "./utils/firebase/firebase.utils";
-<<<<<<< HEAD
-import { useDispatch } from "react-redux";
-import { setCurrentUser } from "./redux-store/user/user.action";
-=======
->>>>>>> dc9b14
 
 import Home from "./components/routes/home/home.component";
 import Navigation from "./components/routes/navigation/navigation.component";

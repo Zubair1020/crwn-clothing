@@ -3,10 +3,6 @@ import {
   selectCartItems,
   selectCartTotal,
 } from "../../redux-store/cart/cart.selector";
-<<<<<<< HEAD
-=======
-
->>>>>>> dc9b14
 import CheckoutItem from "../checkout-item/checkout-item.component";
 
 import {

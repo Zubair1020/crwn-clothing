@@ -7,8 +7,6 @@ import { getCategoriesAndDocuments } from "../../../utils/firebase/firebase.util
 import Directory from "../../directory/directory.component";
 
 const Home = () => {
-<<<<<<< HEAD
-=======
   const dispatch = useDispatch();
   useEffect(() => {
     const getCategoriesMap = async () => {
@@ -17,7 +15,6 @@ const Home = () => {
     };
     getCategoriesMap();
   }, []);
->>>>>>> dc9b14
   return (
     <div>
       <Outlet />
