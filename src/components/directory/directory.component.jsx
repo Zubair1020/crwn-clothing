@@ -1,4 +1,3 @@
-import React from "react";
 import DirectoryData from "./directory-data.json";
 import DirectoryItem from "../directory-item/directory-item.component";
 import { DirectoryCon } from "./directory.style";

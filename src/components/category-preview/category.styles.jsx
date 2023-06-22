@@ -9,11 +9,11 @@ export const CategoryPreviewCon = styled.div`
 
 export const Title = styled(Link)`
   font-size: 28px;
-  margin-bottom: 25px;
   cursor: pointer;
 `;
 export const PreviewCon = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   column-gap: 20px;
+  margin-top: 1.5rem;
 `;

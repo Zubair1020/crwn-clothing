@@ -1,12 +1,12 @@
-import React, { useState } from "react";
-import Button, { BUTTON_TYPE_CLASSES } from "../button/button.component";
+import { useState } from "react";
 import FormInput from "../form-input/form-input.component";
-import "./sign-in-form.style.jsx";
 import {
   signInWithGooglePopup,
   signAuthUserWithEmailAndPassword,
 } from "../../utils/firebase/firebase.utils";
+
 import { ButtonsCon, SignInCon } from "./sign-in-form.style.jsx";
+import Button, { BUTTON_TYPE_CLASSES } from "../button/button.component";
 
 const SignInForm = () => {
   const [formField, setFormField] = useState({

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Button from "../button/button.component";
 
 export const SignUpCon = styled.div`
   display: flex;
@@ -8,4 +9,8 @@ export const SignUpCon = styled.div`
   h2 {
     margin: 10px 0;
   }
+`;
+
+export const StyledButton = styled(Button)`
+  width: 100%;
 `;
