@@ -12,7 +12,7 @@ const Category = () => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    console.log(categoriesMap)
+    // console.log(categoriesMap)
     setProducts(categoriesMap[category]);
   }, [category, categoriesMap]);
 
